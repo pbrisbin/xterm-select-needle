@@ -1,5 +1,9 @@
 A patched version of xterm to yank URLs by keyboard.
 
+Original: https://bbs.archlinux.org/viewtopic.php?id=181515
+
+Simplified and bugfixed for mutt by me.
+
 ## Installation
 
 ```
