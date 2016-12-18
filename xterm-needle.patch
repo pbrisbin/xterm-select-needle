@@ -45,7 +45,7 @@ diff -u xterm-304/button.c xterm/button.c
 +            size_t i;
 +
 +            for (i = 0; i < len; i++) {
-+              if (ld->charData[cell.col + i] != needle[i]) {
++              if (ld->charData[cell.col + i] != (unsigned)needle[i]) {
 +                break;
 +              }
 +            }
