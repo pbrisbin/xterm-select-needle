@@ -59,6 +59,10 @@ build() {
       --enable-sixel-graphics \
       --with-tty-group=tty \
       --with-utempter
+      # --enable-regis-graphics \
+      # --enable-sixel-graphics \
+      # --enable-trace
+
   make
 }
 
