@@ -23,7 +23,7 @@ source=(ftp://invisible-island.net/${_pkgname}/${_pkgname}-${pkgver}.tgz{,.asc}
         LICENSE)
 md5sums=('3c32e931adcad44e64e57892e75d9e02'
          'SKIP'
-         'fa08a9bda4d85c485ed3476a3df90512'
+         'c4119402b9d934239cff502024d4e9a7'
          '10ecc3f8ee91e3189863a172f68282d2')
 validpgpkeys=('C52048C0C0748FEE227D47A2702353E0F7E48EDB') # "Thomas Dickey <dickey@invisible-island.net>"
 
