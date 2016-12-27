@@ -2457,6 +2457,9 @@ HandleSelectNeedle(Widget w,
             }
 
             if (i == len) { /* needle found */
+              TRACE(("SelectNeedle: disown (found)\n"));
+              DisownSelection(xw);
+
               TRACE(("SelectNeedle: found (%d,%d)\n", cell.row, cell.col));
               screen->selectUnit = Select_WORD;
               ComputeSelect(xw, &cell, &cell, False);
@@ -2465,7 +2468,7 @@ HandleSelectNeedle(Widget w,
           }
         }
 
-        TRACE(("SelectNeedle: disown\n"));
+        TRACE(("SelectNeedle: disown (not found)\n"));
         DisownSelection(xw);
     }
 }

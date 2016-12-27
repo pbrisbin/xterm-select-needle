@@ -1,7 +1,7 @@
 diff -u xterm-327/button.c ../xterm/button.c
 --- xterm-327/button.c	2016-05-30 15:42:44.000000000 -0400
-+++ ../xterm/button.c	2016-12-21 19:13:49.371027324 -0500
-@@ -2408,6 +2408,68 @@
++++ ../xterm/button.c	2016-12-27 14:11:12.388043210 -0500
+@@ -2408,6 +2408,71 @@
      }
  }
  
@@ -54,6 +54,9 @@ diff -u xterm-327/button.c ../xterm/button.c
 +            }
 +
 +            if (i == len) { /* needle found */
++              TRACE(("SelectNeedle: disown (found)\n"));
++              DisownSelection(xw);
++
 +              TRACE(("SelectNeedle: found (%d,%d)\n", cell.row, cell.col));
 +              screen->selectUnit = Select_WORD;
 +              ComputeSelect(xw, &cell, &cell, False);
@@ -62,7 +65,7 @@ diff -u xterm-327/button.c ../xterm/button.c
 +          }
 +        }
 +
-+        TRACE(("SelectNeedle: disown\n"));
++        TRACE(("SelectNeedle: disown (not found)\n"));
 +        DisownSelection(xw);
 +    }
 +}
@@ -72,7 +75,7 @@ diff -u xterm-327/button.c ../xterm/button.c
  {
 diff -u xterm-327/charproc.c ../xterm/charproc.c
 --- xterm-327/charproc.c	2016-10-07 17:14:54.000000000 -0400
-+++ ../xterm/charproc.c	2016-12-21 19:18:14.084368175 -0500
++++ ../xterm/charproc.c	2016-12-21 19:20:54.401039394 -0500
 @@ -266,6 +266,7 @@
      { "select-cursor-start",	HandleKeyboardSelectStart },
      { "select-end",		HandleSelectEnd },
