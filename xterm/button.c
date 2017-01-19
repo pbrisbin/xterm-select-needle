@@ -2431,6 +2431,12 @@ HandleSelectNeedle(Widget w,
         CELL cell = screen->cursorp;
         LineData *ld;
 
+#if OPT_FOCUS_EVENT
+        // Fake a focus event to work around some window managers
+        XFocusChangeEvent *focus_event = (XFocusChangeEvent *) event;
+        focus_event->type = FocusIn;
+#endif
+
         if (!isSameCELL(&screen->startH, &screen->endH)) {
           TRACE(("SelectNeedle: starting at current highlight\n"));
           /* Something's highlighted, start a row above */
@@ -2457,9 +2463,9 @@ HandleSelectNeedle(Widget w,
             }
 
             if (i == len) { /* needle found */
-              TRACE(("SelectNeedle: disown (found)\n"));
-              DisownSelection(xw);
-
+#if OPT_FOCUS_EVENT
+              SendFocusButton(xw, focus_event);
+#endif
               TRACE(("SelectNeedle: found (%d,%d)\n", cell.row, cell.col));
               screen->selectUnit = Select_WORD;
               ComputeSelect(xw, &cell, &cell, False);
@@ -2468,7 +2474,6 @@ HandleSelectNeedle(Widget w,
           }
         }
 
-        TRACE(("SelectNeedle: disown (not found)\n"));
         DisownSelection(xw);
     }
 }

@@ -11,7 +11,7 @@
 pkgname=xterm-select-needle
 _pkgname=xterm # upstream
 pkgver=327
-pkgrel=3
+pkgrel=4
 pkgdesc="X Terminal Emulator (with select-needle patch)"
 arch=('i686' 'x86_64')
 url="http://invisible-island.net/xterm/"
@@ -23,7 +23,7 @@ source=(ftp://invisible-island.net/${_pkgname}/${_pkgname}-${pkgver}.tgz{,.asc}
         LICENSE)
 md5sums=('3c32e931adcad44e64e57892e75d9e02'
          'SKIP'
-         'f3790ed5cf3c118c58a45efee7d03ee5'
+         'a1b737933cfae89cd713043c2b883132'
          '10ecc3f8ee91e3189863a172f68282d2')
 validpgpkeys=('C52048C0C0748FEE227D47A2702353E0F7E48EDB') # "Thomas Dickey <dickey@invisible-island.net>"
 
