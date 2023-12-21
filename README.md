@@ -1,3 +1,5 @@
+**Archived**: I don't use or maintain this anymore. Forks welcome.
+
 A patched version of xterm to yank URLs by keyboard.
 
 Original: https://bbs.archlinux.org/viewtopic.php?id=181515
